@@ -271,8 +271,7 @@ var permissionConfig = function() {
     .pipe(gulp.dest('./scripts/configs'));
 };
 
-gulp.task('default', ['config', 'core_templates', 'core_scripts', 'core_tests',], function() {
-    permissionConfig();
+gulp.task('default', ['config', 'permission_config', 'core_templates', 'core_scripts', 'core_tests',], function() {
     compileSass();
     copyIcons();
     copyImages();
@@ -291,6 +290,7 @@ gulp.task('scripts', buildScripts);
 gulp.task('vendors', buildVendors);
 gulp.task('sass', compileSass);
 gulp.task('config', configConstants);
+gulp.task('permission_config', permissionConfig);
 
 gulp.task('watch', function(){
     gulp.watch(coreHtmlFiles, ['core_templates']);
