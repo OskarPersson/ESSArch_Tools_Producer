@@ -271,8 +271,7 @@ var permissionConfig = function() {
     .pipe(gulp.dest('./scripts/configs'));
 };
 
-gulp.task('default', ['core_templates', 'core_scripts', 'core_tests',], function() {
-    configConstants();
+gulp.task('default', ['config', 'core_templates', 'core_scripts', 'core_tests',], function() {
     permissionConfig();
     compileSass();
     copyIcons();
